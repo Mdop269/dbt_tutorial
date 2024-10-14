@@ -15,4 +15,4 @@ WHERE
     fueltype IS NOT NULL AND
     type_name IS NOT NULL AND
     value IS NOT NULL AND
-    value_units IS NOT NULL;
+    value_units IS NOT NULL
