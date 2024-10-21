@@ -1,5 +1,5 @@
 -- models/marts/dim_aircrafts.sql
-{{ config(materialized='table') }}
+{{ config(materialized='view') }}
 
 WITH aircraft_data AS (
     SELECT
