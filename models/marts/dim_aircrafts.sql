@@ -7,7 +7,7 @@ WITH aircraft_data AS (
         model,
         range
     FROM 
-        {{ ref('aircrafts_data') }}  -- reference the raw aircrafts_data table in dbt
+        {{ ref('AIRCRAFTS_DATA') }}  -- reference the raw aircrafts_data table in dbt
 )
 
 SELECT * FROM aircraft_data;
