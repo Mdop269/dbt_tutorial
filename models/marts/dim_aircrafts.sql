@@ -3,11 +3,11 @@
 
 WITH aircraft_data AS (
     SELECT
-        DISTINCT aircraft_code,
-        model,
-        range
+        DISTINCT "aircraft_code",
+        "model",
+        "range"
     FROM 
-        {{ source('cdc_public', 'aircrafts_data') }}  -- Use the source function
+        {{ source('my_snowflake_schema', 'aircrafts_data') }}  -- Ensure the table name is correct
 )
 
 SELECT * FROM aircraft_data;
