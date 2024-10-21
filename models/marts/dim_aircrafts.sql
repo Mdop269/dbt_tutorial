@@ -7,7 +7,7 @@ WITH aircraft_data AS (
         "model",
         "range"
     FROM 
-        {{ source('my_snowflake_schema', 'aircrafts_data') }}  -- Ensure the table name is correct
+        {{ source('cdc_public', 'aircrafts_data') }}  -- Ensure the table name is correct
 )
 
 SELECT * FROM aircraft_data;
