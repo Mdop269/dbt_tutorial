@@ -1,15 +1,24 @@
-/*models/marts/dim_aircrafts.sql 
--- {{ config(materialized='view') }}
+/* models/marts/dim_aircrafts.sql  */
 
--- WITH aircraft_data AS (
---     SELECT
---         DISTINCT aircraft_code,
---         model,
---         range
---     FROM 
---         {{ source('cdc_public', 'aircrafts_data') }}  -- Ensure the table name is correct
--- )
 
-*/ 
-SELECT count(*)
-FROM {{ source('cdc_public', 'aircrafts_data') }};
+{{ config(materialized='view') }}
+
+select distinct aircraft_code, model, range
+from {{ source("cdc_public", "aircrafts_data") }}  -- Ensure the table name is correct
+
+
+
+
+/* models/marts/dim_aircrafts.sql */
+/* {{ config(materialized='view') }} */
+/*
+with aircraft_data1 as (
+    select distinct aircraft_code, model, range
+    from {{ source("cdc_public", "aircrafts_data") }}  -- Ensure the table name is correct
+)
+
+select *
+from aircraft_data;  -- Add this line to select data from the CTE
+
+
+*/
