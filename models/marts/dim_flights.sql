@@ -1,3 +1,4 @@
+{{ config(materialized='view')}}
 SELECT
     DISTINCT flight_id,
     flight_no,
