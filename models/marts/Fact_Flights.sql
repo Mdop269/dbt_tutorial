@@ -1,3 +1,4 @@
+{{ config(materialized='view')}}
 SELECT 
     tf.flight_id,
     tf.ticket_no,
