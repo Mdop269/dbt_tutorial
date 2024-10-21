@@ -1,6 +1,3 @@
-INSERT INTO Fact_Flights (flight_id, ticket_no, book_ref, fare_conditions, boarding_no, seat_no,
-                          scheduled_departure, scheduled_arrival, actual_departure, actual_arrival,
-                          total_amount, status, departure_airport_code, arrival_airport_code)
 SELECT 
     tf.flight_id,
     tf.ticket_no,
