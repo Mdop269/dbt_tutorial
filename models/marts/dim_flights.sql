@@ -1,6 +1,6 @@
 {{ config(materialized='view')}}
 SELECT
-    DISTINCT flight_id,
+    tf.flight_id,
     flight_no,
     scheduled_departure,
     scheduled_arrival,
@@ -10,3 +10,6 @@ SELECT
     aircraft_code
 FROM
     airflow.cdc_public.flights
+JOIN 
+    airflow.cdc_public.ticket_flights As tf ON f.flight_no = tf.flight_no 
+                                       AND f.scheduled_departure = tf.scheduled_departure

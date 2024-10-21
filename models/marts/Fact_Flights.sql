@@ -15,10 +15,10 @@ SELECT
     f.departure_airport AS departure_airport_code,
     f.arrival_airport AS arrival_airport_code
 FROM 
-    aircrafts_data.cdc_public.ticket_flights tf
+    airflow.cdc_public.ticket_flights tf
 JOIN 
-    aircrafts_data.cdc_public.tickets t ON tf.ticket_no = t.ticket_no  -- Inferred relationship
+    airflow.cdc_public.tickets t ON tf.ticket_no = t.ticket_no  -- Inferred relationship
 JOIN 
-    aircrafts_data.cdc_public.flights f ON tf.flight_id = f.flight_id  -- Inferred relationship
+    airflow.cdc_public.flights f ON tf.flight_id = f.flight_id  -- Inferred relationship
 LEFT JOIN 
-    aircrafts_data.cdc_public.boarding_passes bp ON tf.ticket_no = bp.ticket_no AND tf.flight_id = bp.flight_id
+    airflow.cdc_public.boarding_passes bp ON tf.ticket_no = bp.ticket_no AND tf.flight_id = bp.flight_id
