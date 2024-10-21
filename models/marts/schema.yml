@@ -3,4 +3,4 @@ version: 2
 sources:
   - name: cdc_public    # Replace with your actual Snowflake schema name
     tables:
-      - name: aircrafts_data      # This should match the Snowflake table name
+      - name: aircrafts_data     # This should match the Snowflake table name
