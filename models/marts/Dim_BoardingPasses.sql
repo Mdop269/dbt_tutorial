@@ -1,6 +1,6 @@
 {{ config(materialized='view')}}
 SELECT 
-    DISTINCT ticket_no, 
+    ticket_no, 
     flight_id, 
     boarding_no, 
     seat_no
