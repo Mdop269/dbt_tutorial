@@ -4,4 +4,4 @@ SELECT
     boarding_no, 
     seat_no
 FROM 
-    boarding_passes
+    airflow.cdc_public.boarding_passes
