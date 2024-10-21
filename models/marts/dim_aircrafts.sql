@@ -1,5 +1,5 @@
--- models/dim_aircrafts.sql
-{{ config(materialized='view') }}
+-- models/marts/dim_aircrafts.sql
+{{ config(materialized='table') }}
 
 WITH aircraft_data AS (
     SELECT
@@ -7,7 +7,7 @@ WITH aircraft_data AS (
         model,
         range
     FROM 
-        {{ ref('AIRCRAFTS_DATA') }}  -- reference the raw aircrafts_data table in dbt
+        {{ source('cdc_public', 'aircrafts_data') }}  -- Use the source function
 )
 
 SELECT * FROM aircraft_data;
