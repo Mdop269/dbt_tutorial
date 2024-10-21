@@ -1,7 +1,7 @@
 {{ config(materialized='view') }}
 
 SELECT 
-    airport_code, 
+    DISTINCT airport_code,  
     airport_name, 
     city, 
     coordinates, 
