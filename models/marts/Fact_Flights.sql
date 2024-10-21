@@ -1,4 +1,3 @@
-{{ config(materialized='view')}}
 SELECT 
     tf.flight_id,
     tf.ticket_no,
@@ -19,6 +18,6 @@ FROM
 JOIN 
     airflow.cdc_public.tickets t ON tf.ticket_no = t.ticket_no  -- Inferred relationship
 JOIN 
-    airflow.cdc_public.dim_flights f ON tf.flight_id = f.flight_id  -- Inferred relationship
+    airflow.cdc_public.flights f ON tf.flight_id = f.flight_id  -- Inferred relationship
 LEFT JOIN 
     airflow.cdc_public.boarding_passes bp ON tf.ticket_no = bp.ticket_no AND tf.flight_id = bp.flight_id
